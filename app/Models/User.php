@@ -29,4 +29,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+        // Relasi: 1 User memiliki banyak (hasMany) Items
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'users_id');
+    }
 }
